@@ -27,19 +27,19 @@ export default function TodayWeather({dataWeather, isChecked, loading, coords}) 
         </Grid></>
     const cardsWithSkeleton = <>
         <Grid item xs={4}>
-           <Skeleton width={'80%'} height={200} />
+            <Skeleton width={'80%'} height={200}/>
         </Grid>
         <Grid item xs={4}>
-            <Skeleton width={'80%'} height={200} />
+            <Skeleton width={'80%'} height={200}/>
         </Grid>
         <Grid item xs={4}>
-            <Skeleton width={'80%'} height={200} />
+            <Skeleton width={'80%'} height={200}/>
         </Grid>
         <Grid item xs={4}>
-            <Skeleton sx={{marginTop: '-40%'}} width={'80%'} height={200} />
+            <Skeleton sx={{marginTop: '-40%'}} width={'80%'} height={200}/>
         </Grid>
         <Grid item xs={4}>
-            <Skeleton sx={{marginTop: '-40%'}} width={'80%'} height={200} />
+            <Skeleton sx={{marginTop: '-40%'}} width={'80%'} height={200}/>
         </Grid></>
 
     return <Box sx={{marginTop: 10}}>
@@ -55,12 +55,11 @@ export default function TodayWeather({dataWeather, isChecked, loading, coords}) 
                 }
 
             </Grid>
-            <Box sx={ loading ? {width: '40%', marginTop: '-8%'} : {width: '40%'}}>
+            <Box sx={loading ? {width: '40%', marginTop: '-8%'} : {width: '40%'}}>
                 {loading
-                    ? <Skeleton width={'100%'} height={600} />
-                    : <MyMap coords={coords} />
+                    ? <Skeleton width={'100%'} height={600}/>
+                    : <MyMap coords={coords}/>
                 }
-
             </Box>
         </Box>
     </Box>
