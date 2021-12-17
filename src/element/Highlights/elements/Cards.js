@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Button, Card, CardActions, CardContent, Skeleton, Typography} from "@mui/material";
+import {Box, Card, CardActions, CardContent, Skeleton, Typography} from "@mui/material";
 import styled from "@emotion/styled";
 import {rain} from "../../icons/Image";
 

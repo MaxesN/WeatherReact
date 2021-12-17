@@ -1,5 +1,5 @@
-import React, {useRef} from "react";
-import {Autocomplete, Box, Button, InputAdornment, Skeleton, styled, TextField, useAutocomplete} from "@mui/material";
+import React from "react";
+import {Autocomplete, Box, Button, Skeleton, styled, TextField} from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import WeatherIcon from "./elements/WeatherIcon";
 import Temperature from "./elements/Temperature";
