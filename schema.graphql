@@ -1,0 +1,128 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on OBJECT | FIELD_DEFINITION | INTERFACE
+
+type City {
+    coord: Coordinates
+    country: String
+    id: ID
+    name: String
+    weather: Weather
+}
+
+type Clouds {
+    all: Int
+    humidity: Int
+    visibility: Int
+}
+
+type Coordinates {
+    lat: Float
+    lon: Float
+}
+
+type Query {
+    getCityById(config: ConfigInput, id: [String!]): [City]
+    getCityByName(config: ConfigInput, country: String, name: String!): City
+}
+
+type Summary {
+    description: String
+    icon: String
+    title: String
+}
+
+type Temperature {
+    actual: Float
+    feelsLike: Float
+    max: Float
+    min: Float
+}
+
+type Weather {
+    clouds: Clouds
+    summary: Summary
+    temperature: Temperature
+    timestamp: Int
+    wind: Wind
+}
+
+type Wind {
+    deg: Int
+    speed: Float
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+enum Language {
+    af
+    al
+    ar
+    az
+    bg
+    ca
+    cz
+    da
+    de
+    el
+    en
+    es
+    eu
+    fa
+    fi
+    fr
+    gl
+    he
+    hi
+    hr
+    hu
+    id
+    it
+    ja
+    kr
+    la
+    lt
+    mk
+    nl
+    no
+    pl
+    pt
+    pt_br
+    ro
+    ru
+    se
+    sk
+    sl
+    sp
+    sr
+    sv
+    th
+    tr
+    ua
+    uk
+    vi
+    zh_cn
+    zh_tw
+    zu
+}
+
+enum Unit {
+    imperial
+    kelvin
+    metric
+}
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
+
+input ConfigInput {
+    lang: Language
+    units: Unit
+}
