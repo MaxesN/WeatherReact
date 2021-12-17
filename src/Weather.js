@@ -14,7 +14,7 @@ export const Weather = () => {
     })
 
     const changeCity = (name) => {
-        setCity(name ?? 'Lviv')
+        setCity(name ?? 'London')
     }
 
     if (error) {
