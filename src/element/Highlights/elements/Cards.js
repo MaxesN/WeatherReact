@@ -22,7 +22,7 @@ const Img = styled('img')({
 export default function Cards({loading, dataWeather}) {
 
     const items = cards.map(item =>
-        <Card key={item.id} sx={{maxWidth: '10%', borderRadius: '10%', boxShadow: 4}}>
+        <Card key={item.id} sx={{width: 100, borderRadius: '10%', boxShadow: 4, marginTop: 2}}>
             <CardContent sx={{textAlign: 'center'}}>
                 <Typography sx={{fontSize: 16, fontWeight: 'bold', color: 'black'}} color="text.secondary" gutterBottom>
                     {item.title}
@@ -35,7 +35,7 @@ export default function Cards({loading, dataWeather}) {
                 <Typography sx={{textAlign: 'center'}}>{item.temperature} ºC </Typography>
             </CardActions>
         </Card>)
-    const skeletonCars = cards.map(item => <Skeleton key={item.id} width={'10%'} height={190}/>)
+    const skeletonCars = cards.map(item => <Skeleton key={item.id} sx={{width: 100, height: 150, borderRadius: '10%', marginTop: 2}}/>)
 
 
     if (loading) {
