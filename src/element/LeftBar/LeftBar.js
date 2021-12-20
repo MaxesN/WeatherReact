@@ -33,8 +33,13 @@ export default function LeftBar({changeCity, loading, isChecked, cityName, time,
             </Box>
             <Box sx={loading ? {marginLeft: 3} : {marginLeft: 3, marginTop: 8}}>
                 {loading
-                    ? <Skeleton width={150} height={250} sx={{marginLeft: "auto", marginRight: '30%', top: 0}}/>
-                    : <WeatherIcon currentWeather={dataWeather?.weather.summary.title} time={2}/>
+                    ? <Skeleton sx={{
+                        marginLeft: "auto",
+                        marginRight: '30%',
+                        top: 0,
+                        width: {md: '70%', sm: '60%', xs: '70%'},
+                        height: {md: 300, sm: 350, xs: 200}}}/>
+                    : <WeatherIcon country={dataWeather?.country} time={time} currentWeather={dataWeather?.weather.summary.title}/>
                 }
             </Box>
             <Box sx={loading ? {marginTop: 0} : {marginTop: 10}}>

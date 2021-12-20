@@ -6,7 +6,7 @@ export default function Visibility({visibility}) {
 
     return <>
         <Card sx={{
-            width: '80%',
+            width: {xs: 200, lg: '80%'},
             padding: 2,
             borderRadius: '10%',
             height: 150,

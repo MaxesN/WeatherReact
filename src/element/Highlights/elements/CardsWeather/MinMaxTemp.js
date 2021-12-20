@@ -6,7 +6,7 @@ import TemperatureFunc from "../../../temperatureFunc/temperatureFunc";
 export default function MinMaxTemp({temperature, isChecked}) {
     return <>
         <Card sx={{
-            width: '80%',
+            width: {xs: 200, lg: '80%'},
             padding: 2,
             borderRadius: '10%',
             height: 150,
@@ -19,14 +19,14 @@ export default function MinMaxTemp({temperature, isChecked}) {
             <Box display={'flex'}>
                 <ThermostatIcon fontSize={'large'} color={'primary'}/>
                 {temperature
-                    ? <Typography sx={{alignSelf: 'center', fontSize: 25}}>{!isChecked ? temperature?.min : TemperatureFunc(temperature?.min)}°C</Typography>
+                    ? <Typography sx={{alignSelf: 'center', fontSize: 25}}>{!isChecked ? temperature?.min.toFixed(1) : TemperatureFunc(temperature?.min)}{isChecked ? '°C' : '℉'}</Typography>
                     : <Box>Нет информации</Box>
                 }
             </Box>
             <Box display={'flex'}>
                 <ThermostatIcon fontSize={'large'} color={'error'}/>
                 {temperature
-                    ? <Typography sx={{alignSelf: 'center', fontSize: 25}}>{!isChecked ? temperature?.max : TemperatureFunc(temperature?.max)}°C</Typography>
+                    ? <Typography sx={{alignSelf: 'center', fontSize: 25}}>{!isChecked ? temperature?.max.toFixed(1) : TemperatureFunc(temperature?.max)}{isChecked ? '°C' : '℉'}</Typography>
                     : <Box>Нет информации</Box>
                 }
             </Box>

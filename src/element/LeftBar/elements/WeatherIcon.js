@@ -1,29 +1,31 @@
 import React from "react";
-import {styled} from "@mui/material";
 import {clouds, day, fog, night, rain, snow} from "../../icons/Image";
+import {styled} from "@mui/material";
 
-const Img = styled('img')({
-    width: '70%'
-})
+const Img = styled('img')({})
 
 export default function WeatherIcon({currentWeather, time}) {
+    const newDate = new Date(time * 1000)
+    const currentHour = newDate.getHours()
+
     if (currentWeather !== undefined && time !== null) {
         if (currentWeather === 'Clear') {
-            if (time > 18 || time < 5) {
-                return <Img src={night} alt="night"/>
+            if (currentHour > 18 || currentHour < 5) {
+                return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={night} alt="night"/>
 
-            } else return <Img src={day} alt="day"/>
+            } else return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={day} alt="day"/>
 
         } else if (currentWeather === 'Rain') {
-            return <Img src={rain} alt="Rain"/>
+            return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={rain} alt="Rain"/>
 
         } else if (currentWeather === 'Clouds') {
-            return <Img src={clouds} alt="clouds"/>
+            {console.log(currentHour)}
+            return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={clouds} alt="clouds"/>
 
         } else if (currentWeather === 'Snow') {
-            return <Img src={snow}/>
+            return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={snow}/>
         } else if (currentWeather === 'Fog' || 'Mist') {
-            return <Img src={fog} />
+            return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={fog} />
         }
     }
     return <div>Что-то пошло не так</div>

@@ -13,7 +13,8 @@ export default function Highlights({dataWeather, setCheck, isChecked, loading, c
 
             }
         </Box>
-        <Box sx={ loading ? {display: 'flex', justifyContent: 'space-between'} : {display: 'flex', justifyContent: 'space-between', marginTop: 10}}><Cards dataWeather={dataWeather} loading={loading} /></Box>
+        <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 10, flexWrap: 'wrap'}}
+        ><Cards dataWeather={dataWeather} loading={loading} /></Box>
         <Box><TodayWeather coords={coords} loading={loading} dataWeather={dataWeather} isChecked={isChecked} /></Box>
     </Box>
 }

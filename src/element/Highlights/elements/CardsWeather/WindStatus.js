@@ -5,7 +5,7 @@ export default function WindStatus({speed}) {
     const NewSpeed = Math.round(speed * 3.25)
     return <>
         <Card sx={{
-            width: '80%',
+            width: {xs: 200, lg: '80%'},
             padding: 2,
             borderRadius: '10%',
             height: 150,
