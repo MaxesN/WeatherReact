@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Skeleton, styled, Typography} from "@mui/material";
+import {Box, Grid, Skeleton, Typography} from "@mui/material";
 import WindStatus from "./CardsWeather/WindStatus";
 import SunRice from "./CardsWeather/SunRice";
 import Humidity from "./CardsWeather/Humidity";

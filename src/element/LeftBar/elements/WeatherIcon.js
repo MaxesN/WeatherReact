@@ -5,12 +5,11 @@ import {styled} from "@mui/material";
 const Img = styled('img')({})
 
 export default function WeatherIcon({currentWeather, time}) {
-    const newDate = new Date(time * 1000)
-    const currentHour = newDate.getHours()
+    const newTime = new Date(time * 1000).getHours()
 
-    if (currentWeather !== undefined && time !== null) {
+    if (currentWeather !== undefined && newTime !== null) {
         if (currentWeather === 'Clear') {
-            if (currentHour > 18 || currentHour < 5) {
+            if (newTime > 18 || newTime < 5) {
                 return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={night} alt="night"/>
 
             } else return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={day} alt="day"/>
