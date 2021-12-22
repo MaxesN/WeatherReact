@@ -18,7 +18,6 @@ export default function WeatherIcon({currentWeather, time}) {
             return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={rain} alt="Rain"/>
 
         } else if (currentWeather === 'Clouds') {
-            {console.log(currentHour)}
             return <Img sx={{width: {md: '70%', sm: '60%', xs: '70%'}}} src={clouds} alt="clouds"/>
 
         } else if (currentWeather === 'Snow') {
